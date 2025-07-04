@@ -32,7 +32,7 @@ export class EventsGateway implements OnModuleInit {
       (isMotionDetected: number) => {
         console.log('Motion sensor state changed:', isMotionDetected);
         // Emit the event to all connected clients
-        this.server.emit('motionSensorState', isMotionDetected);
+        this.server.emit('message', `${isMotionDetected}`);
       },
     );
   }
